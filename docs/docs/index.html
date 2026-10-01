@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Dreamcast Bluetooth controller adapter with persistent virtual VMU, microSD backup and NiceMCU status display.">
+<title>Dreamcast Bluetooth + Virtual VMU</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#090b0e;color:#f5f7fa;line-height:1.55}
+main{max-width:980px;margin:0 auto;padding:48px 22px 80px}
+.hero{padding:34px 0 22px}
+.eyebrow{color:#ff7a18;font-weight:800;letter-spacing:.03em}
+h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:1.02;margin:.25rem 0 1rem}
+h2{margin-top:0}
+.lead{font-size:1.18rem;color:#c7ced8;max-width:760px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:11px;text-decoration:none;font-weight:800;border:1px solid #39414d;color:#f5f7fa;background:#171b22}
+.btn.primary{background:#ff7a18;color:#111;border-color:#ff7a18}
+.btn.coffee{background:#ffdd00;color:#111;border-color:#ffdd00}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:20px 0}
+.card{background:#141820;border:1px solid #29313c;border-radius:16px;padding:22px}
+.warn{border-left:5px solid #ffb020}
+.small{color:#aeb7c2;font-size:.93rem}
+code{background:#20252d;padding:2px 6px;border-radius:6px}
+ul{padding-left:1.25rem}
+footer{margin-top:42px;border-top:1px solid #252c35;padding-top:24px;color:#9da7b3}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<div class="eyebrow">PUBLIC BETA 0.9 · FIRMWARE STAGE 5.10</div>
+<h1>Dreamcast Bluetooth + Virtual VMU</h1>
+<p class="lead">A NiceMCU ESP32 Dreamcast controller adapter combining BlueRetro Bluetooth input, a persistent 128 KiB virtual VMU, automatic microSD backup and a live 2.8&quot; status display.</p>
+
+<div class="buttons">
+<a class="btn primary" href="flasher/">Flash Beta 0.9</a>
+<a class="btn" href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/blob/main/docs/QUICK-START.md">Quick start</a>
+<a class="btn" href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU">GitHub source</a>
+<a class="btn coffee" href="https://buymeacoffee.com/flesheater">☕ Buy me a coffee</a>
+</div>
+</section>
+
+<section class="card warn">
+<h2>Beta 0.9 power warning</h2>
+<p><strong>Power the NiceMCU from USB-C and leave the Dreamcast controller-port +5 V wire disconnected.</strong></p>
+<p class="small">Controller-port power is being tested separately and is not part of the public Beta 0.9 wiring.</p>
+</section>
+
+<div class="grid">
+<section class="card">
+<h2>What works</h2>
+<ul>
+<li>Bluetooth controller input via BlueRetro</li>
+<li>Persistent 128 KiB virtual VMU</li>
+<li>Real game save/load and power-cycle retention</li>
+<li>Automatic SD VMU backup on cold boot</li>
+<li><code>VMU:WRITING</code> / <code>VMU:SAVED</code> feedback</li>
+<li><code>SD:BACKUP OK</code> status</li>
+<li>Animated Dreamcast-style status display</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Tested hardware</h2>
+<ul>
+<li>NiceMCU-32S-DEV 2.8&quot; IPS</li>
+<li>Original ESP32, 4 MB flash</li>
+<li>ST7789 240×320 display</li>
+<li>Onboard microSD slot</li>
+<li>Single Dreamcast controller-port Maple connection</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Tested cable wiring</h2>
+<p><code>RED → GPIO21</code><br>
+<code>WHITE → GPIO22</code><br>
+<code>GREEN → GND</code><br>
+<code>COPPER/shield → GND</code><br>
+<code>BLUE/+5 V → DISCONNECTED</code></p>
+<p class="small">Cable colours can vary. Verify the signals on your own cable before wiring.</p>
+</section>
+</div>
+
+<section class="card">
+<h2>Install in the browser</h2>
+<p>Use current Chrome or Edge on a desktop computer. Connect the NiceMCU over USB-C, then open the web flasher.</p>
+
+<div class="buttons">
+<a class="btn primary" href="flasher/">Open Web Flasher</a>
+<a class="btn" href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/blob/main/docs/WIRING-AND-SAFETY.md">Wiring &amp; safety</a>
+<a class="btn" href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/blob/main/docs/TROUBLESHOOTING.md">Troubleshooting</a>
+</div>
+
+<p class="small">The Beta 0.9 web flasher is a factory installation and can erase existing internal VMU saves and Bluetooth pairing data.</p>
+</section>
+
+<div class="grid">
+<section class="card">
+<h2>VMU backup</h2>
+<p>Runtime VMU data lives in internal flash. On cold boot the firmware can rotate the previous SD image to <code>/VMU/BACKUP/PREV.BIN</code> and copy the current VMU to <code>/VMU/MC.BIN</code>.</p>
+</section>
+
+<section class="card">
+<h2>Project links</h2>
+<p>
+<a href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/releases">Releases / downloads</a><br>
+<a href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/blob/main/docs/BETA-TEST-CHECKLIST.md">Beta test checklist</a><br>
+<a href="https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/blob/main/CHANGELOG.md">Changelog</a>
+</p>
+</section>
+</div>
+
+<footer>
+<p>Based on BlueRetro v25.04 by darthcloud/Jacques Gagnon. BlueRetro is licensed under Apache License 2.0. Dreamcast is a Sega trademark. This community project is not affiliated with or endorsed by Sega or the BlueRetro project.</p>
+</footer>
+</main>
+</body>
+</html>
