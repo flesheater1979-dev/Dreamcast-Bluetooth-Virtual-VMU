@@ -1,3 +1,17 @@
+## Quick links
+
+- **[Flash Beta 0.9 in Chrome/Edge](https://flesheater1979-dev.github.io/Dreamcast-Bluetooth-Virtual-VMU/flasher/)**
+- **[Project homepage](https://flesheater1979-dev.github.io/Dreamcast-Bluetooth-Virtual-VMU/)**
+- [Quick start](docs/QUICK-START.md)
+- [Wiring and safety](docs/WIRING-AND-SAFETY.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [Beta test checklist](docs/BETA-TEST-CHECKLIST.md)
+- [Releases / downloads](https://github.com/flesheater1979-dev/Dreamcast-Bluetooth-Virtual-VMU/releases)
+- [☕ Buy Me a Coffee](https://buymeacoffee.com/flesheater)
+
+
+
+
 # Dreamcast Bluetooth + Virtual VMU for NiceMCU — Beta 0.9
 
 A community beta firmware for the **NiceMCU-32S-DEV 2.8" ESP32 display board** that combines:
