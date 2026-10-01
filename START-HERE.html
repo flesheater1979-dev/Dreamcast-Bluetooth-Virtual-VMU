@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start Here — Dreamcast Bluetooth + Virtual VMU Beta 0.9</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;background:#0d1014;color:#f2f4f7;margin:0}
+main{max-width:900px;margin:auto;padding:28px}
+h1,h2{color:#fff}.orange{color:#ff7a18}.card{background:#171c23;border:1px solid #303846;border-radius:14px;padding:20px;margin:18px 0}
+.warning{border-left:6px solid #ffb020}.wire{display:grid;grid-template-columns:130px 1fr;gap:8px 16px}
+.red{color:#ff6b6b}.white{color:#fff}.green{color:#63e6be}.blue{color:#74c0fc}.copper{color:#d8a15d}
+code{background:#242b34;padding:3px 7px;border-radius:5px}.ok{color:#69db7c}
+</style></head><body><main>
+<h1>Dreamcast Bluetooth + Virtual VMU <span class="orange">Beta 0.9</span></h1>
+<p>NiceMCU-32S-DEV 2.8" / original ESP32 / firmware Stage 5.10</p>
+
+<div class="card warning"><h2>Read this first</h2>
+<p><strong>Power the NiceMCU from USB-C.</strong> The Dreamcast +5 V wire is not used in this beta. Keep it disconnected and insulated.</p>
+<p>Wire colours are not universal. The colours below are the development cable only.</p></div>
+
+<div class="card"><h2>1 — Wiring</h2><div class="wire">
+<div class="red"><strong>RED</strong></div><div>GPIO21</div>
+<div class="white"><strong>WHITE</strong></div><div>GPIO22</div>
+<div class="green"><strong>GREEN</strong></div><div>GND</div>
+<div class="copper"><strong>COPPER/shield</strong></div><div>GND</div>
+<div class="blue"><strong>BLUE / +5 V</strong></div><div><strong>DISCONNECTED</strong></div>
+</div></div>
+
+<div class="card"><h2>2 — Optional SD card</h2>
+<p>FAT32 recommended. 32 GB has been tested. The firmware creates <code>/VMU/MC.BIN</code> and rotates the previous copy to <code>/VMU/BACKUP/PREV.BIN</code>.</p></div>
+
+<div class="card"><h2>3 — Flash</h2>
+<p>Windows: open <code>windows-flasher</code> and run <code>FLASH-WINDOWS.bat</code>.</p>
+<p>For a brand-new board choose <strong>Factory Install</strong>.</p></div>
+
+<div class="card"><h2>4 — Boot and pair</h2>
+<p>A cold boot may restart once. Pair your Bluetooth controller. The display should move from <code>BT:PAIRING</code> to <code>BT:CONNECTED</code>.</p></div>
+
+<div class="card"><h2>5 — VMU</h2>
+<p>Format the virtual VMU once if Dreamcast asks. Save a game and look for:</p>
+<p><code>VMU:WRITING</code> → <code>VMU:SAVED</code> → <code>VMU:READY</code></p></div>
+
+<div class="card"><h2>6 — Confirm persistence</h2>
+<p>Power everything off completely, reconnect it, and confirm the game save is still present.</p>
+<p class="ok"><strong>Expected with a working SD card: SD:BACKUP OK</strong></p></div>
+
+<p>More detail: <code>docs/QUICK-START.md</code> and <code>docs/TROUBLESHOOTING.md</code>.</p>
+</main></body></html>

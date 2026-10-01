@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dreamcast Bluetooth + Virtual VMU — Beta 0.9 Flasher</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+:root { color-scheme: dark; font-family: system-ui,Segoe UI,Arial,sans-serif; }
+body { margin:0; background:#0b0d10; color:#f5f7fa; }
+main { max-width:780px; margin:0 auto; padding:32px 20px 64px; }
+.card { background:#151920; border:1px solid #2a313b; border-radius:16px; padding:22px; margin:18px 0; }
+h1 { margin-bottom:4px; }
+.accent { color:#ff7a18; }
+.warn { border-left:5px solid #ffb020; padding-left:14px; }
+code { background:#20252d; padding:2px 6px; border-radius:6px; }
+button { font-size:1rem; padding:12px 20px; border-radius:10px; border:0; cursor:pointer; }
+esp-web-install-button { --esp-tools-button-color:#ff7a18; --esp-tools-button-text-color:#111; }
+.small { color:#aeb7c2; font-size:.92rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Dreamcast Bluetooth + Virtual VMU</h1>
+<p class="accent"><strong>NiceMCU Beta 0.9 / firmware Stage 5.10</strong></p>
+
+<div class="card warn">
+<strong>Power warning:</strong>
+<p>For Beta 0.9, power the NiceMCU from USB-C and leave the Dreamcast controller-port +5 V wire disconnected.</p>
+</div>
+
+<div class="card">
+<h2>Before installing</h2>
+<ol>
+<li>Use the tested NiceMCU-32S-DEV 2.8" original ESP32 board.</li>
+<li>Connect the board by USB-C.</li>
+<li>Use Chrome or Edge on desktop.</li>
+<li>Factory installation erases internal VMU saves and Bluetooth pairings.</li>
+<li>The microSD card is not formatted by the firmware.</li>
+</ol>
+</div>
+
+<div class="card">
+<h2>Install Beta 0.9</h2>
+<esp-web-install-button manifest="manifest.json">
+<button slot="activate">Connect &amp; Install</button>
+<span slot="unsupported">This browser does not support Web Serial. Use current Chrome or Edge on desktop.</span>
+<span slot="not-allowed">Web Serial requires this page to be served from HTTPS or localhost.</span>
+</esp-web-install-button>
+<p class="small">After flashing, a cold boot may restart once while the VMU SD backup phase runs.</p>
+</div>
+
+<div class="card">
+<h2>Wiring used by the tested cable</h2>
+<p><code>RED → GPIO21</code><br>
+<code>WHITE → GPIO22</code><br>
+<code>GREEN → GND</code><br>
+<code>COPPER/shield → GND</code><br>
+<code>BLUE/+5 V → DISCONNECTED</code></p>
+<p class="small">Cable colours can vary. Verify your own cable rather than assuming the colours match.</p>
+</div>
+</main>
+</body>
+</html>

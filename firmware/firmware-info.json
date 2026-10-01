@@ -1,0 +1,19 @@
+{
+  "release": "Beta 0.9",
+  "firmware_internal_version": "v25.04 hw1 dc single stage5.10",
+  "target": "ESP32",
+  "flash_size": "4MB",
+  "flash_mode": "dio",
+  "flash_freq": "40m",
+  "offsets": {
+    "bootloader.bin": "0x1000",
+    "partition-table.bin": "0x8000",
+    "ota_data_initial.bin": "0xD000",
+    "Dreamcast-BT-VMU-Beta-v0.9-app.bin": "0x10000"
+  },
+  "notes": [
+    "Clean build outputs only; no personal NVS/VMU full-flash dump included.",
+    "Factory install erases internal flash.",
+    "Update-only app flash preserves existing NVS/SPIFFS when the existing partition layout is compatible."
+  ]
+}
