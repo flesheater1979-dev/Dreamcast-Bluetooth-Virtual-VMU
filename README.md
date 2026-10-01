@@ -121,3 +121,9 @@ BlueRetro is licensed under Apache License 2.0. The upstream license is included
 Modified and new files used for this build are provided under `source-mods/`, with a modification summary in `source-mods/MODIFIED-FILES.md`.
 
 Dreamcast is a Sega trademark. This community project is not affiliated with or endorsed by Sega or the BlueRetro project.
+
+## Support the project
+
+If you find this project useful and want to support further development:
+
+[☕ Buy Me a Coffee](https://buymeacoffee.com/flesheater)
